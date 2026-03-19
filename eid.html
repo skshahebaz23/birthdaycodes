@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+           <!DOCTYPE html>
 <html>
 <head>
     <title>Eid Mubarak</title>
@@ -105,47 +106,57 @@
     <input type="text" id="name" placeholder="Type your name">
     <input type="password" id="pass" placeholder="Password (eid mubarak)">
 
-    <button onclick="login()">Next ➡</button>
+    <button onclick="login()">Next & Play Music ➡</button>
 </div>
 
 <div id="page2" class="page">
     <h2>📸 Memories</h2>
 
-    <!-- ✅ MOBILE PLAY BUTTON -->
-    <button onclick="startMusic()">🎵 Tap to Play Music</button>
-
     <div class="scroll-box">
+
         <div class="card">
             <img src="eid 18.jpg">
-            <p>👉2018 ki eid pic...see how cute we are and you know what this is best pic ever💝</p>
+            <p>👉2018 ki eid pic...see how cute we are 
+                and you know what this is best pic ever💝
+            </p>
         </div>
 
         <div class="card">
             <img src="eid 19.jpg">
-            <p>👉2019 ki pic hai...sab log saath me alhamdulillah kitna pyaara scene hai na..🤌</p>
+            <p>👉2019 ki pic hai...sab log saath me 
+                alhamdulillah kitna pyaara scene hai na..🤌
+            </p>
         </div>
 
         <div class="card">
             <img src="eid 22.jpg">
-            <p>👉 Eid special moments ...2022 ki pic hai isme me maze ki baat ye thi ki hamare clothes had se zada bade hogye...✨</p>
+            <p>👉 Eid special moments ...2022 ki pic hai 
+                isme me maze ki baat ye thi ki hamare clothes had se zada
+                bade hogye...✨</p>
         </div>
 
         <div class="card">
             <img src="eid 23.jpg">
-            <p>👉 Always stay happy....eid 2023 ki pic hai mama ke ghar saat me ..aur alhamdulillah ab tak hai ... bsss koi nazar mat lagana .say MASHA ALLAH ❤️</p>
+            <p>👉 Always stay happy....eid 2023 ki pic hai 
+                mama ke ghar saat me ..aur alhamdulillah ab tak hai ...
+                bsss koi nazar mat lagana .say MASHA ALLAH ❤️</p>
         </div>
 
-        <div class="card">
+         <div class="card">
             <img src="eid 24.jpg">
-            <p>👉 2024 ki pic...we are all happy.. but missing some people those are not alive😣</p>
+            <p>👉 2024 ki pic...we are all happy.. but missing some people 
+                those are not alive😣</p>
         </div>
 
         <div class="card">
             <img src="eid 25.jpg">
-            <p>👉 last yearr pic ...2025 said that .. aise generation me jaha joint family saath nhi rehti waha aaj alhamdulillah sab sab saath hai...aur sab hasi khushi se rehte hai❤️</p>
+            <p>👉 last yearr pic ...2025 said that .. 
+            aise generation me jaha joint family saath nhi rehti waha 
+            aaj alhamdulillah sab sab saath hai...aur sab hasi khushi se rehte hai❤️</p>
         </div>
 
         <h2>EID 2026 PIC IS LOADING .....👀</h2>
+
     </div>
 
     <button onclick="nextPage(3)">Next ➡</button>
@@ -153,19 +164,27 @@
 
 <div id="page3" class="page">
     <img src="eid 26.jpg">
-    <p>👉 ye hai aaj ki pic HAAYE MASHA ALLAH SAB KITNE PYAAARE LAGRE NA...ALLAH KARE HAM SAB AISE HAI HI HASTE KHELTE RAHE ... AMEEN💫</p>
+    <p>👉 ye hai aaj ki pic HAAYE MASHA ALLAH SAB KITNE PYAAARE 
+        LAGRE NA...ALLAH KARE HAM SAB AISE HAI HI HASTE KHELTE RAHE ... AMEEN💫</p>
+
     <button onclick="nextPage(4)">Next ➡</button>
 </div>
 
 <div id="page4" class="page">
     <img src="dua.jpg">
-    <p>👉 ALLAH HAM SAB KE DILO ME BHAICHARA PAIDA KARE HAM SAB KO AMN AUR SUKOON KE SAATH RAKHE...AAJ EID KE MAUKE PER SAB KE HAR ME KHUSHI TO HAI BUT SAB YAAD RAKHE KI HAAME PHALESTEEN aur GAZA KE BHAI,BAHENO,AUR BACHO KO APNI DUA ME YAAD RAKHNA HAI...ALLAH UNHE BHI APNE REHMAT ME LELE AMEEN....🤲</p>
+    <p>👉 ALLAH HAM SAB KE DILO ME BHAICHARA PAIDA KARE 
+        HAM SAB KO AMN AUR SUKOON KE SAATH RAKHE...AAJ EID KE MAUKE PER SAB KE HAR ME KHUSHI TO 
+        HAI BUT SAB YAAD RAKHE KI HAAME PHALESTEEN aur GAZA KE BHAI,BAHENO,AUR BACHO  KO APNI DUA ME 
+        YAAD RAKHNA HAI...ALLAH UNHE BHI APNE REHMAT ME LELE AMEEN....🤲</p>
+
     <button onclick="nextPage(5)">Next ➡</button>
 </div>
 
 <div id="page5" class="page">
     <img src="mubarak.jpg">
-    <h2>Eid Mubarak...AAPKO AUR AAPKE FAMILY KO HAMARI FAMILY KI TARAF SE EID KI BHOT SAAARI MUBARAK BAAD AISE HI HASTE REHNA ...AND THNKS FOR READ ❤️</h2>
+    <h2>Eid Mubarak...AAPKO AUR AAPKE FAMILY KO 
+        HAMARI FAMILY KI TARAF SE EID KI BHOT SAAARI MUBARAK BAAD 
+        AISE HI HASTE REHNA ...AND THNKS FOR READ  ❤️</h2>
     <p id="finalText"></p>
 </div>
 
@@ -183,26 +202,26 @@
     function login() {
         let name = document.getElementById("name").value;
         let pass = document.getElementById("pass").value;
+        let music = document.getElementById("bgm");
 
         if (name !== "" && pass === "eid mubarak") {
             localStorage.setItem("username", name);
+
+            // ✅ MOBILE + LAPTOP FIX
+            music.muted = true;
+            let playPromise = music.play();
+
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    music.muted = false;
+                }).catch(() => {
+                    console.log("Autoplay blocked");
+                });
+            }
+
             showPage(2);
         } else {
             alert("Wrong Password ❌");
-        }
-    }
-
-    // ✅ MUSIC FUNCTION (WORKS EVERYWHERE)
-    function startMusic() {
-        let music = document.getElementById("bgm");
-        music.currentTime = 0;
-
-        let playPromise = music.play();
-
-        if (playPromise !== undefined) {
-            playPromise.catch(() => {
-                alert("Click again to play music 🎵");
-            });
         }
     }
 
