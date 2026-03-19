@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eid Mubarak</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            text-align: center;
+            color: white;
+            overflow-x: hidden;
+            background: rgba(14, 4, 93, 0.871);
+        }
+
+        /* 🌟 ANIMATED STARS */
+        .stars {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .stars span {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            animation: moveStars 10s linear infinite;
+        }
+
+        @keyframes moveStars {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(100vh);
+            }
+        }
+
+        /* 📱 PAGE STYLE */
+        .page {
+            display: none;
+            padding: 40px 15px;
+            min-height: 100vh;
+        }
+
+        .active {
+            display: block;
+        }
+
+        h1 {
+            font-size: 32px;
+        }
+
+        input {
+            display: block;
+            margin: 10px auto;
+            padding: 12px;
+            width: 80%;
+            max-width: 300px;
+            border-radius: 8px;
+            border: none;
+        }
+
+        button {
+            padding: 12px 20px;
+            background: gold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        img {
+            width: 90%;
+            max-width: 300px;
+            border-radius: 12px;
+            margin-top: 15px;
+        }
+
+        /* 📸 SCROLL PAGE */
+        .scroll-box {
+            max-height: 60vh;
+            overflow-y: auto;
+            padding: 10px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.05);
+            padding: 10px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="stars" id="stars"></div>
+
+<audio id="bgm" loop>
+  <source src="music/la.mp3" type="audio/mpeg">
+</audio>
+
+
+<div id="page1" class="page active">
+    <h1>Eid Mubarak 🌙</h1>
+
+    <input type="text" id="name" placeholder="Type your name">
+    <input type="password" id="pass" placeholder="Password (eid mubarak)">
+
+    <button onclick="login()">Next & Play Music ➡</button>
+</div>
+
+<div id="page2" class="page">
+    <h2>📸 Memories</h2>
+
+    <div class="scroll-box">
+
+        <div class="card">
+            <img src="eid 18.jpg">
+            <p>👉2018 ki eid pic...see how cute we are 
+                and you know what this is best pic ever💝
+            </p>
+        </div>
+
+        <div class="card">
+            <img src="eid 19.jpg">
+            <p>👉2019 ki pic hai...sab log saath me 
+                alhamdulillah kitna pyaara scene hai na..🤌
+            </p>
+        </div>
+
+        <div class="card">
+            <img src="eid 22.jpg">
+            <p>👉 Eid special moments ...2022 ki pic hai 
+                isme me maze ki baat ye thi ki hamare clothes had se zada
+                bade hogye...✨</p>
+        </div>
+
+        <div class="card">
+            <img src="eid 23.jpg">
+            <p>👉 Always stay happy....eid 2023 ki pic hai 
+                mama ke ghar saat me ..aur alhamdulillah ab tak hai ...
+                bsss koi nazar mat lagana .say MASHA ALLAH ❤️</p>
+        </div>
+
+         <div class="card">
+            <img src="eid 24.jpg">
+            <p>👉 2024 ki pic...we are all happy.. but missing some people 
+                those are not alive😣</p>
+        </div>
+
+        <div class="card">
+            <img src="eid 25.jpg">
+            <p>👉 last yearr pic ...2025 said that .. 
+            aise generation me jaha joint family saath nhi rehti waha 
+            aaj alhamdulillah sab sab saath hai...aur sab hasi khushi se rehte hai❤️</p>
+        </div>
+
+        <h2>EID 2026 PIC IS LOADING .....👀</h2>
+
+    </div>
+
+    <button onclick="nextPage(3)">Next ➡</button>
+</div>
+
+<div id="page3" class="page">
+    <img src="eid 26.jpg">
+    <p>👉 ye hai aaj ki pic HAAYE MASHA ALLAH SAB KITNE PYAAARE 
+        LAGRE NA...ALLAH KARE HAM SAB AISE HAI HI HASTE KHELTE RAHE ... AMEEN💫</p>
+
+    <button onclick="nextPage(4)">Next ➡</button>
+</div>
+
+<div id="page4" class="page">
+    <img src="dua.jpg">
+    <p>👉 ALLAH HAM SAB KE DILO ME BHAICHARA PAIDA KARE 
+        HAM SAB KO AMN AUR SUKOON KE SAATH RAKHE...AAJ EID KE MAUKE PER SAB KE HAR ME KHUSHI TO 
+        HAI BUT SAB YAAD RAKHE KI HAAME PHALESTEEN aur GAZA KE BHAI,BAHENO,AUR BACHO  KO APNI DUA ME 
+        YAAD RAKHNA HAI...ALLAH UNHE BHI APNE REHMAT ME LELE AMEEN....🤲</p>
+
+    <button onclick="nextPage(5)">Next ➡</button>
+</div>
+
+<div id="page5" class="page">
+    <img src="mubarak.jpg">
+    <h2>Eid Mubarak...AAPKO AUR AAPKE FAMILY KO 
+        HAMARI FAMILY KI TARAF SE EID KI BHOT SAAARI MUBARAK BAAD 
+        AISE HI HASTE REHNA ...AND THNKS FOR READ  ❤️</h2>
+    <p id="finalText"></p>
+</div>
+
+<script>
+    // ⭐ GENERATE STARS
+    let starsContainer = document.getElementById("stars");
+
+    for (let i = 0; i < 80; i++) {
+        let star = document.createElement("span");
+        star.style.left = Math.random() * 100 + "%";
+        star.style.top = Math.random() * 100 + "%";
+        star.style.animationDuration = (5 + Math.random() * 5) + "s";
+        starsContainer.appendChild(star);
+    }
+
+    function login() {
+        let name = document.getElementById("name").value;
+        let pass = document.getElementById("pass").value;
+        let music = document.getElementById("bgm");
+
+        if (name !== "" && pass === "eid mubarak") {
+            localStorage.setItem("username", name);
+            
+            // Yahan music play ho raha hai
+            music.play().catch(function(error) {
+                console.log("Music play error:", error);
+            });
+
+            showPage(2);
+        } else {
+            alert("Wrong Password ❌");
+        }
+    }
+
+    function showPage(num) {
+        let pages = document.querySelectorAll(".page");
+        pages.forEach(p => p.classList.remove("active"));
+        document.getElementById("page" + num).classList.add("active");
+
+        if (num === 5) {
+            let name = localStorage.getItem("username");
+            document.getElementById("finalText").innerText =
+                "✨ Eid Mubarak " + name + "! Allah tumhe hamesha khush rakhe ✨";
+        }
+    }
+
+    function nextPage(num) {
+        showPage(num);
+    }
+</script>
+
+</body>
+</html>
