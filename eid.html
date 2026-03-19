@@ -1,9 +1,7 @@
-
-           <!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
     <title>Eid Mubarak</title>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
@@ -95,7 +93,7 @@
 
 <div class="stars" id="stars"></div>
 
-<!-- ✅ FIXED AUDIO -->
+<!-- ✅ AUDIO -->
 <audio id="bgm" loop playsinline>
   <source src="music/la.mp3" type="audio/mpeg">
 </audio>
@@ -207,17 +205,16 @@
         if (name !== "" && pass === "eid mubarak") {
             localStorage.setItem("username", name);
 
-            // ✅ MOBILE + LAPTOP FIX
-            music.muted = true;
-            let playPromise = music.play();
-
-            if (playPromise !== undefined) {
-                playPromise.then(() => {
-                    music.muted = false;
-                }).catch(() => {
-                    console.log("Autoplay blocked");
+            // 🔥 BEST POSSIBLE MOBILE FIX
+            music.play().then(() => {
+                console.log("Music started");
+            }).catch(() => {
+                // If blocked → next tap will start
+                document.body.addEventListener("click", function once() {
+                    music.play();
+                    document.body.removeEventListener("click", once);
                 });
-            }
+            });
 
             showPage(2);
         } else {
